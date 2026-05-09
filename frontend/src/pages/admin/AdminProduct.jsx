@@ -53,7 +53,7 @@ const AdminProduct = () => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:7001/api/v1/product/getallproducts"
+          `${import.meta.env.VITE_API_URL}/api/v1/product/getallproducts`
         );
 
         if (res.data.success) {
@@ -100,7 +100,7 @@ const AdminProduct = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:7001/api/v1/product/update/${editProduct._id}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/product/update/${editProduct._id}`,
         formData,
         {
           headers: {
@@ -172,7 +172,7 @@ const AdminProduct = () => {
       );
 
       const res = await axios.delete(
-        `http://localhost:7001/api/v1/product/delete/${productId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/product/delete/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

@@ -56,7 +56,7 @@ const dispatch = useDispatch()
       }
 
       const res = await axios.put(
-        `http://localhost:7001/api/v1/user/update/${userId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/user/update/${userId}`,
         formData,
         {
           headers: {
@@ -81,7 +81,7 @@ const dispatch = useDispatch()
   const getUserDetails = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:7001/api/v1/user/get-user/${userId}`,{
+        `${import.meta.env.VITE_API_URL}/api/v1/user/get-user/${userId}`,{
           headers:{
             Authorization: `Bearer ${accessToken}`
           }

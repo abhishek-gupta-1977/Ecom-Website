@@ -39,7 +39,7 @@ const ChangePassword = () => {
       setLoading(true);
 
       const res = await axios.put(
-        `http://localhost:7001/api/v1/user/change-password/${email}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/user/change-password/${email}`,
         passwords
       );
 

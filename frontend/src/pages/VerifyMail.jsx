@@ -12,7 +12,7 @@ const VerifyMail = () => {
   const verifyMail = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:7001/api/v1/user/verify",
+        `${import.meta.env.VITE_API_URL}/api/v1/user/verify`,
         {},
         {
           headers: {

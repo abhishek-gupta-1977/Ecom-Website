@@ -1,5 +1,4 @@
 import { ShoppingCart } from "lucide-react";
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import axios from "axios";
@@ -18,7 +17,7 @@ const Navbar = () => {
   const logoutHandler = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:7001/api/v1/user/logout",
+        `${import.meta.env.VITE_API_URL}/api/v1/user/logout`,
         {},
         {
           headers: {
@@ -39,10 +38,6 @@ const Navbar = () => {
     }
   };
 
-  // Moody Blue   #737CCF   // primary
-// Link Water   #E1E5F8   // background
-// Persian Blue #2218A7   // strong CTA / accents
-// Spindle      #BBC4EB   // secondary cards
   return (
     <header className="bg-[#1E3A8A]/90 backdrop-blur-md fixed w-full z-20 border-b b text-white order-[#BBC4EB] shadow-sm">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-3">

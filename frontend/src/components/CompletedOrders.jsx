@@ -13,7 +13,7 @@ const CompletedOrders = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        "http://localhost:7001/api/v1/order/my-orders",
+        `${import.meta.env.VITE_API_URL}/api/v1/order/my-orders`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,

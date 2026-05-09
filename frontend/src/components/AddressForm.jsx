@@ -55,7 +55,7 @@ const AddressForm = () => {
   const handlePayment = async () => {
     try {
       const { data } = await axios.post(
-        `${import.meta.env.VITE_URL}/api/v1/order/create-order`,
+        `${import.meta.env.VITE_API_URL}/api/v1/order/create-order`,
         {
           products: cart?.items?.map((item) => ({
             productId: item.productId._id,
@@ -84,7 +84,7 @@ const AddressForm = () => {
         handler: async function (response) {
           try {
             const verifyRes = await axios.post(
-              `${import.meta.env.VITE_URL}/api/v1/order/verify-payment`,
+              `${import.meta.env.VITE_API_URL}/api/v1/order/verify-payment`,
               response,
               {
                 headers: { Authorization: `Bearer ${accessToken}` },
@@ -104,7 +104,7 @@ const AddressForm = () => {
         modal: {
           ondismiss: async function () {
             await axios.post(
-              `${import.meta.env.VITE_URL}/api/v1/order/verify-payment`,
+              `${import.meta.env.VITE_API_URL}/api/v1/order/verify-payment`,
               {
                 razorpay_order_id: data.order.id,
                 paymentFailed: true,
@@ -128,7 +128,7 @@ const AddressForm = () => {
 
       rzp.on("payment.failed", async function (response) {
         await axios.post(
-          `${import.meta.env.VITE_URL}/api/v1/order/verify-payment`,
+          `${import.meta.env.VITE_API_URL}/api/v1/order/verify-payment`,
           {
             razorpay_order_id: data.order.id,
             paymentFailed: true,

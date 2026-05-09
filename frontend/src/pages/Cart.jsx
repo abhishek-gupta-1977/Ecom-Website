@@ -20,7 +20,7 @@ const Cart = () => {
     const fetchCart = async () => {
       if (!accessToken) return;
       try {
-        const res = await axios.get("http://localhost:7001/api/v1/cart", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/cart`, {
           headers: { Authorization: `Bearer ${accessToken}` },
         });
 
@@ -43,7 +43,7 @@ const Cart = () => {
   const shipping = totalPrice > 50 ? 0 : 12;
   const grandTotal = totalPrice + tax + shipping;
 
-  let API = "http://localhost:7001/api/v1/cart";
+  let API = `${import.meta.env.VITE_API_URL}/api/v1/cart`;
 
   const handleUpdateQuantity = async (productId, type) => {
     try {

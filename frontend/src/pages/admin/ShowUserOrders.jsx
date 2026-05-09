@@ -11,7 +11,7 @@ const ShowUserOrders = () => {
   const fetchUserOrders = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:7001/api/v1/order/user-orders/${userId}`,
+        `${import.meta.env.VITE_API_URL}/api/v1/order/user-orders/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
