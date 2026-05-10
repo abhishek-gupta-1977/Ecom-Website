@@ -28,12 +28,12 @@ const VerifyResetOTP = () => {
 
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/v1/user/verify-otp/${email}`,
-        { otp }
+        { otp },
       );
-console.log("EMAIL:", email);
+      console.log("EMAIL:", email);
       if (res.data.success) {
         toast.success(res.data.message);
-        
+
         navigate("/change-password", {
           state: { email },
         });
@@ -59,9 +59,7 @@ console.log("EMAIL:", email);
             Verify OTP
           </CardTitle>
 
-          <p className="text-gray-500">
-            Enter the OTP sent to your email
-          </p>
+          <p className="text-gray-500">Enter the OTP sent to your email</p>
         </CardHeader>
 
         <CardContent className="px-8">

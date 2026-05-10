@@ -10,7 +10,7 @@ export const sendOTP = async (otp, email) => {
       from: "onboarding@resend.dev",
       to: email,
       subject: "Your OTP Verification Code",
-      html: `<h1>Your OTP: ${otp}</h1>`,
+      html: `<h1>Your OTP: ${otp}</h1> <p>for resetting the password. Valid for only 10 minutes.</p>`,
     })
 
    

@@ -1,47 +1,21 @@
-import nodemailer from 'nodemailer'
-import 'dotenv/config'
+import nodemailer from "nodemailer";
+import "dotenv/config";
 
+export const verifyEmail = async (token, email) => {
+  try {
+    const data = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: email,
+      subject: "Account verification link",
+      html: `<p>Hello, Were happy to have you on board. To start shopping please confirm your email address.</p>
+      <a href=${token} class="button-link">Verify Now</a> <p>Best Regards, ECommerce Team</p>
+      `,
+    });
 
- export const verifyEmail = async (token,email) => {
-    const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS
-    }
-});
-
-const mailConfigurations = {
-
-    // It should be a string of sender/server email
-    from: process.env.MAIL_USER,
-
-    to: email,
-
-    // Subject of Email
-    subject: 'Email Verification',
-    
-    // This would be the text of email body
-    text: `Hi! There, You have recently visited 
-           our website and entered your email.
-           Please follow the given link to verify your email
-           http://localhost:5173/verify/${token} 
-           Thanks`
-};
-
-transporter.sendMail(mailConfigurations, function(error, info){
+    console.log("Verification link sent successfully");
+    console.log(data);
+  } catch (error) {
     if (error) throw Error(error);
-    console.log('Email Sent Successfully');
-    console.log(info);
-});
-}
-
-
-
-
-
-
-
-
-
-
+    console.log(error);
+  }
+};
