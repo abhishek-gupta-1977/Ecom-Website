@@ -10,7 +10,7 @@ export const verifyEmail = async (token, email) => {
       to: email,
       subject: "Account verification link",
       html: `<p>Hello, Were happy to have you on board. To start shopping please confirm your email address.</p>
-      <a href=${token} class="button-link">Verify Now</a> <p>Best Regards, ECommerce Team</p>
+      <a href="https://ecommerce-project-tan-alpha.vercel.app/verify/${token}" class="button-link">Verify Now</a> <p>Best Regards, ECommerce Team</p>
       `,
     });
 
