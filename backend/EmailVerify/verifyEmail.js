@@ -13,7 +13,6 @@ export const verifyEmail = async (token, email) => {
       <a href="https://ecommerce-project-tan-alpha.vercel.app/verify/${token}" class="button-link">Verify Now</a> <p>Best Regards, ECommerce Team</p>
       `,
     });
-
     console.log("Verification link sent successfully");
     console.log(data);
   } catch (error) {
