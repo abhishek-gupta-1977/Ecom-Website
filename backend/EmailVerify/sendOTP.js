@@ -16,7 +16,7 @@ export const sendOTP = async (otp, email) => {
    
 
     console.log("OTP Email Sent Successfully");
-    console.log(info);
+    console.log(data);
 
   } catch (error) {
     console.error("Mail Error:", error.message);
