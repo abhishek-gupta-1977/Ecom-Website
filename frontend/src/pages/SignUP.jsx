@@ -54,7 +54,7 @@ const SignUP = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#E1E5F8] via-white to-[#BBC4EB] px-4">
-      <Card className="w-full max-w-md rounded-3xl border border-[#BBC4EB] shadow-2xl bg-white overflow-hidden">
+      <Card className="w-full max-w-md mx-4 sm:mx-0 rounded-3xl border border-[#BBC4EB] shadow-2xl bg-white overflow-hidden">
         <div className="h-3 bg-gradient-to-r from-[#2218A7] to-[#737CCF]" />
 
         <CardHeader className="text-center pt-8">
@@ -71,8 +71,8 @@ const SignUP = () => {
           </p>
         </CardHeader>
 
-        <CardContent className="space-y-5 px-8">
-          <div className="grid grid-cols-2 gap-4">
+        <CardContent className="space-y-5 px-5 sm:px-8">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <Label className="text-[#2218A7]">First Name</Label>
               <Input
@@ -125,7 +125,7 @@ const SignUP = () => {
           </div>
         </CardContent>
 
-        <CardFooter className="flex-col gap-5 px-8 pb-8">
+        <CardFooter className="flex-col gap-5 px-5 sm:px-8 pb-6 sm:pb-8">
           <Button
             onClick={submitHandler}
             className="w-full h-12 rounded-xl bg-[#2218A7] hover:bg-[#737CCF]"

@@ -60,7 +60,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#E1E5F8] via-white to-[#BBC4EB] px-4">
-      <Card className="w-full max-w-md rounded-3xl border border-[#BBC4EB] shadow-2xl bg-white overflow-hidden">
+      <Card className="w-full max-w-md mx-4 sm:mx-0 rounded-3xl border border-[#BBC4EB] shadow-2xl bg-white overflow-hidden">
 
         {/* Top Accent */}
         <div className="h-3 bg-gradient-to-r from-[#2218A7] to-[#737CCF]" />
@@ -79,7 +79,7 @@ const Login = () => {
           </p>
         </CardHeader>
 
-        <CardContent className="space-y-6 px-8">
+        <CardContent className="space-y-5 px-5 sm:px-8">
           <div className="space-y-2">
             <Label className="text-[#2218A7] font-medium">Email</Label>
             <Input

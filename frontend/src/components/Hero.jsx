@@ -38,15 +38,15 @@ const Hero = () => {
       </Swiper>
 
       <div className="absolute top-0 right-0 z-10 bg-black/10 min-h-screen w-full flex  justify-center">
-        <div className="text-white mt-20 text-center">
-          <h1 className="text-9xl font-light text-[#111827]-400 mb-6">
-            Top Fashion Brands
-          </h1>
+        <div className="text-white mt-24 sm:mt-32 lg:mt-20 text-center px-4 sm:px-6">
+  <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-light mb-6">
+    Top Fashion Brands
+  </h1>
 
-          <p className="text-3xl mt-60 text-[#64748B]">
-            Premium designer clothes crafted just for you.
-          </p>
-        </div>
+  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-10 sm:mt-20 lg:mt-60 text-[#64748B] max-w-4xl mx-auto">
+    Premium designer clothes crafted just for you.
+  </p>
+</div>
       </div>
     </section>
   );

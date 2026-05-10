@@ -150,164 +150,171 @@ const AddressForm = () => {
   };
 
 return (
-  <div className="min-h-screen bg-[#E1E5F8] py-16">
-    <div className="max-w-7xl mx-auto grid grid-cols-2 gap-12 px-8">
+  <div className="min-h-screen bg-[#E1E5F8] py-8 sm:py-12 lg:py-16">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 px-4 sm:px-6 lg:px-8">
 
-      {/* Left Section */}
-      <div className="bg-white rounded-3xl shadow-xl border border-[#BBC4EB] p-8">
-        {showForm ? (
-          <>
-            <h1 className="text-3xl font-bold text-[#2218A7] mb-8">
-              Shipping Address
-            </h1>
+    {/* Left Section */}
+    <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-[#BBC4EB] p-4 sm:p-6 lg:p-8">
+      {showForm ? (
+        <>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#2218A7] mb-6 sm:mb-8">
+            Shipping Address
+          </h1>
 
-            <div className="space-y-5">
-              {[
-                ["Full Name", "fullName"],
-                ["Phone Number", "phoneNo"],
-                ["Email", "email"],
-                ["Address", "address"],
-              ].map(([label, name]) => (
-                <div key={name}>
-                  <Label className="text-[#2218A7] font-medium">{label}</Label>
-                  <Input
-                    name={name}
-                    value={formData[name]}
-                    onChange={handleChange}
-                    className="mt-2 h-12 rounded-xl border-[#BBC4EB] focus:ring-2 focus:ring-[#737CCF]"
-                  />
-                </div>
-              ))}
-
-              <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-4 sm:space-y-5">
+            {[
+              ["Full Name", "fullName"],
+              ["Phone Number", "phoneNo"],
+              ["Email", "email"],
+              ["Address", "address"],
+            ].map(([label, name]) => (
+              <div key={name}>
+                <Label className="text-[#2218A7] font-medium">{label}</Label>
                 <Input
-                  name="city"
-                  placeholder="City"
-                  value={formData.city}
+                  name={name}
+                  value={formData[name]}
                   onChange={handleChange}
-                  className="h-12 rounded-xl border-[#BBC4EB]"
-                />
-                <Input
-                  name="state"
-                  placeholder="State"
-                  value={formData.state}
-                  onChange={handleChange}
-                  className="h-12 rounded-xl border-[#BBC4EB]"
+                  className="mt-2 h-11 sm:h-12 rounded-xl border-[#BBC4EB]"
                 />
               </div>
+            ))}
 
-              <div className="grid grid-cols-2 gap-4">
-                <Input
-                  name="zipCode"
-                  placeholder="Zip Code"
-                  value={formData.zipCode}
-                  onChange={handleChange}
-                  className="h-12 rounded-xl border-[#BBC4EB]"
-                />
-                <Input
-                  name="country"
-                  placeholder="Country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  className="h-12 rounded-xl border-[#BBC4EB]"
-                />
-              </div>
+            {/* City / State */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Input
+                name="city"
+                placeholder="City"
+                value={formData.city}
+                onChange={handleChange}
+                className="h-11 sm:h-12 rounded-xl border-[#BBC4EB]"
+              />
+              <Input
+                name="state"
+                placeholder="State"
+                value={formData.state}
+                onChange={handleChange}
+                className="h-11 sm:h-12 rounded-xl border-[#BBC4EB]"
+              />
+            </div>
 
-              <Button
-                className="w-full h-14 bg-[#2218A7] hover:bg-[#737CCF] rounded-xl text-white"
-                onClick={handleSubmit}
+            {/* Zip / Country */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Input
+                name="zipCode"
+                placeholder="Zip Code"
+                value={formData.zipCode}
+                onChange={handleChange}
+                className="h-11 sm:h-12 rounded-xl border-[#BBC4EB]"
+              />
+              <Input
+                name="country"
+                placeholder="Country"
+                value={formData.country}
+                onChange={handleChange}
+                className="h-11 sm:h-12 rounded-xl border-[#BBC4EB]"
+              />
+            </div>
+
+            <Button
+              className="w-full h-12 sm:h-14 bg-[#2218A7] hover:bg-[#737CCF] rounded-xl text-white"
+              onClick={handleSubmit}
+            >
+              Save & Continue
+            </Button>
+          </div>
+        </>
+      ) : (
+        <>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#2218A7] mb-6 sm:mb-8">
+            Saved Addresses
+          </h1>
+
+          <div className="space-y-4">
+            {addresses.map((address, index) => (
+              <div
+                key={index}
+                onClick={() => dispatch(setSelectedAddress(index))}
+                className={`p-4 sm:p-5 rounded-2xl cursor-pointer transition border-2 ${
+                  selectedAddress === index
+                    ? "bg-[#737CCF] text-white border-[#2218A7]"
+                    : "bg-[#E1E5F8] border-[#BBC4EB]"
+                }`}
               >
-                Save & Continue
-              </Button>
-            </div>
-          </>
-        ) : (
-          <>
-            <h1 className="text-3xl font-bold text-[#2218A7] mb-8">
-              Saved Addresses
-            </h1>
+                <h2 className="font-bold text-base sm:text-lg">
+                  {address.fullName}
+                </h2>
 
-            <div className="space-y-4">
-              {addresses.map((address, index) => (
-                <div
-                  key={index}
-                  onClick={() => dispatch(setSelectedAddress(index))}
-                  className={`p-5 rounded-2xl cursor-pointer transition border-2
-                    ${
-                      selectedAddress === index
-                        ? "bg-[#737CCF] text-white border-[#2218A7]"
-                        : "bg-[#E1E5F8] border-[#BBC4EB]"
-                    }`}
+                <p className="text-sm sm:text-base">{address.phoneNo}</p>
+                <p className="text-sm sm:text-base break-all">
+                  {address.email}
+                </p>
+
+                <p className="text-sm sm:text-base">
+                  {address.address}, {address.city}, {address.state}
+                </p>
+
+                <button
+                  onClick={() => dispatch(deletedAddress(index))}
+                  className="mt-3 text-red-500 font-medium"
                 >
-                  <h2 className="font-bold text-lg">{address.fullName}</h2>
-                  <p>{address.phoneNo}</p>
-                  <p>{address.email}</p>
-                  <p>
-                    {address.address}, {address.city}, {address.state}
-                  </p>
-
-                  <button
-                    onClick={() => dispatch(deletedAddress(index))}
-                    className="mt-3 text-red-500 font-medium"
-                  >
-                    Delete
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <Button
-              className="w-full mt-5 bg-[#737CCF] hover:bg-[#2218A7]"
-              onClick={() => setShowForm(true)}
-            >
-              + Add New Address
-            </Button>
-
-            <Button
-              className="w-full mt-4 bg-[#2218A7] hover:bg-[#737CCF]"
-              disabled={selectedAddress === null}
-              onClick={handlePayment}
-            >
-              Proceed to Checkout
-            </Button>
-          </>
-        )}
-      </div>
-
-      {/* Order Summary */}
-      <Card className="rounded-3xl shadow-xl border border-[#BBC4EB] bg-white h-fit">
-        <CardHeader className="bg-[#737CCF] rounded-t-3xl">
-          <CardTitle className="text-2xl text-white">
-            Order Summary
-          </CardTitle>
-        </CardHeader>
-
-        <CardContent className="p-8 space-y-5">
-          <div className="flex justify-between text-[#2218A7]">
-            <p>Subtotal</p>
-            <p>₹{subtotal}</p>
+                  Delete
+                </button>
+              </div>
+            ))}
           </div>
 
-          <div className="flex justify-between">
-            <p>Tax</p>
-            <p>₹{tax}</p>
-          </div>
+          <Button
+            className="w-full mt-5 bg-[#737CCF] hover:bg-[#2218A7]"
+            onClick={() => setShowForm(true)}
+          >
+            + Add New Address
+          </Button>
 
-          <div className="flex justify-between">
-            <p>Shipping</p>
-            <p>₹{shipping}</p>
-          </div>
-
-          <Separator />
-
-          <div className="flex justify-between text-xl font-bold text-[#2218A7]">
-            <p>Total</p>
-            <p>₹{total}</p>
-          </div>
-        </CardContent>
-      </Card>
+          <Button
+            className="w-full mt-4 bg-[#2218A7] hover:bg-[#737CCF]"
+            disabled={selectedAddress === null}
+            onClick={handlePayment}
+          >
+            Proceed to Checkout
+          </Button>
+        </>
+      )}
     </div>
+
+    {/* Order Summary */}
+    <Card className="rounded-2xl sm:rounded-3xl shadow-xl border border-[#BBC4EB] bg-white h-fit sticky top-6">
+      <CardHeader className="bg-[#737CCF] rounded-t-2xl sm:rounded-t-3xl">
+        <CardTitle className="text-xl sm:text-2xl text-white">
+          Order Summary
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent className="p-4 sm:p-6 lg:p-8 space-y-5">
+        <div className="flex justify-between text-[#2218A7]">
+          <p>Subtotal</p>
+          <p>₹{subtotal}</p>
+        </div>
+
+        <div className="flex justify-between">
+          <p>Tax</p>
+          <p>₹{tax}</p>
+        </div>
+
+        <div className="flex justify-between">
+          <p>Shipping</p>
+          <p>₹{shipping}</p>
+        </div>
+
+        <Separator />
+
+        <div className="flex justify-between text-lg sm:text-xl font-bold text-[#2218A7]">
+          <p>Total</p>
+          <p>₹{total}</p>
+        </div>
+      </CardContent>
+    </Card>
   </div>
+</div>
 );
 };
 

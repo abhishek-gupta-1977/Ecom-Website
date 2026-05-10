@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1E3A8A] text-white ">
       <div className="mx-auto w-full max-w-screen-xl">
-        <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8 py-8">
           <div>
             <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
               Company
@@ -124,11 +124,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="px-4 py-6  md:flex md:items-center md:justify-between ">
+        <div className="px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <span className="text-sm text-body sm:text-center">
             © 2023 Dribble. All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse text-white">
+          <div className="flex mt-4 sm:justify-center md:mt-0 gap-5 flex-wrap rtl:space-x-reverse text-white">
             <FaFacebook />
             <FaDiscord />
             <FaTwitter />

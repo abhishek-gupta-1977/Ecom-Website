@@ -63,10 +63,10 @@ const ChangePassword = () => {
 
         <CardHeader className="text-center pt-8">
           <div className="mx-auto bg-[#E1E5F8] p-4 rounded-full mb-4">
-            <Lock className="h-8 w-8 text-[#2218A7]" />
+            <Lock className="h-6 w-6 sm:h-8 sm:w-8 text-[#2218A7]" />
           </div>
 
-          <CardTitle className="text-3xl font-bold text-[#2218A7]">
+          <CardTitle className="text-2xl sm:text-3xl font-bold text-[#2218A7]">
             Change Password
           </CardTitle>
 

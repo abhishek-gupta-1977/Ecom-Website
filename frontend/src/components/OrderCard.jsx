@@ -27,20 +27,19 @@ const OrderCard = ({ orders, loading }) => {
               </div>
             </>
           ) : (
-            <div className="flex items-baseline justify-center   bg-gray-100 p-10 rounded-2xl mb-20">
+            <div className="flex justify-center bg-gray-100 p-4 sm:p-6 lg:p-10 rounded-2xl mb-20">
               <div>
                 {orders.map((order, index) => (
                   <div
                     key={index}
-                    className="border border-[#BBC4EB] bg-[#E1E5F8]  mt-5 w-full rounded-2xl shadow-lg p-8"
+                    className="border border-[#BBC4EB] bg-[#E1E5F8] mt-5 w-full rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8"
                   >
-                    <div className="flex justify-between">
+                    <div className="flex flex-col sm:flex-row sm:justify-between gap-3">
                       <div className="flex items-center gap-3">
                         <h2 className="text-[#2218A7] text-xl font-semibold">
                           Order ID:
                         </h2>
-                        <p className="text-md text-gray-500 font-light">
-                          {order._id}
+                        <p className="text-sm text-gray-500 break-all">
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
@@ -52,7 +51,7 @@ const OrderCard = ({ orders, loading }) => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex justify-between items-center mt-2">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-4 gap-3">
                       <div>
                         <div className="flex gap-1">
                           <p className="font-semibold text-md">User: </p>
@@ -72,9 +71,12 @@ const OrderCard = ({ orders, loading }) => {
                       <p className="text-lg font-semibold mt-5">Products:</p>
                       {order.products.map((product, index) => {
                         return (
-                          <div key={index} className="bg-white p-3 my-2 rounded-lg">
-                            <div className="grid grid-cols-2 gap-5 ">
-                              <div className="flex items-center gap-5">
+                          <div
+                            key={index}
+                            className="bg-white p-3 my-2 rounded-lg"
+                          >
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                                 <img
                                   onClick={() =>
                                     navigate(
@@ -85,7 +87,7 @@ const OrderCard = ({ orders, loading }) => {
                                     product?.productId?.productImage?.[0]?.url
                                   }
                                   alt={product.productId.productName}
-                                  className="h-20 w-20 rounded-lg cursor-pointer mb-1"
+                                  className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg cursor-pointer mb-1"
                                 />
 
                                 <p className="text-xl font-semibold ">
@@ -93,7 +95,7 @@ const OrderCard = ({ orders, loading }) => {
                                 </p>
                                 <p>{product?.productId._id}</p>
                               </div>
-                              <div className="flex justify-end items-center ">
+                             <div className="flex justify-start md:justify-end items-center">
                                 <p className="font-bold text-lg text-[#2218A7] mr-14">
                                   {product.productId.productPrice} X{" "}
                                   {product.quantity}

@@ -18,7 +18,7 @@ const SideBar = () => {
     }`;
 
   return (
-    <div className="fixed w-[300px] h-screen bg-[#E1E5F8] border-r border-[#BBC4EB] pt-24 px-4">
+   <div className="hidden lg:block fixed w-[280px] xl:w-[300px] h-screen bg-[#E1E5F8] border-r border-[#BBC4EB] pt-24 px-4">
       <h1 className="text-2xl font-bold text-[#2218A7] mb-10 text-center">
         Admin Panel
       </h1>

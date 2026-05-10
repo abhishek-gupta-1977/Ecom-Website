@@ -9,7 +9,7 @@ const secondRow = reviews.slice(reviews.length / 2)
 
 const Reviews = () => {
   return (
-     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-[#E1E5F8]/60 py-10">
+     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-[#E1E5F8]/60 py-8 sm:py-10 lg:py-14">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />

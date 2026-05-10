@@ -35,10 +35,10 @@ const ProductCard = ({ product, loading }) => {
   };
 
   return (
-    <div className="group bg-white rounded-3xl overflow-hidden border border-[#BBC4EB] shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+    <div className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#BBC4EB] shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
       
       {/* Image */}
-      <div className="relative bg-[#F8FAFC] p-6 overflow-hidden">
+      <div className="relative bg-[#F8FAFC] p-4 sm:p-6 overflow-hidden">
         {loading ? (
           <Skeleton className="h-72 w-full rounded-2xl" />
         ) : (
@@ -46,7 +46,7 @@ const ProductCard = ({ product, loading }) => {
             onClick={() => navigate(`/product/${product._id}`)}
             src={productImage[0]?.url || "./user.webp"}
             alt=""
-            className="w-full h-64 object-contain rounded-2xl cursor-pointer transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-48 sm:h-56 lg:h-64 object-contain rounded-2xl cursor-pointer transition-transform duration-500 group-hover:scale-110"
           />
         )}
 
@@ -67,14 +67,14 @@ const ProductCard = ({ product, loading }) => {
         ) : (
           <>
             <h1
-              className="text-lg font-semibold text-[#111827] line-clamp-2 cursor-pointer hover:text-[#737CCF] transition"
+              className="text-base sm:text-lg font-semibold text-[#111827] line-clamp-2 cursor-pointer hover:text-[#737CCF] transition"
               onClick={() => navigate(`/product/${product._id}`)}
             >
               {productName}
             </h1>
 
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-[#64748B]">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#64748B]">
                 ₹{productPrice}
               </h2>
 

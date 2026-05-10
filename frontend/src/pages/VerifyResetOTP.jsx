@@ -69,7 +69,7 @@ const VerifyResetOTP = () => {
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
             placeholder="Enter 6-digit OTP"
-            className="h-14 text-center text-xl tracking-[16px] rounded-xl border-[#BBC4EB]"
+            className="h-14 text-center text-lg sm:text-xl tracking-[8px] sm:tracking-[16px] rounded-xl border-[#BBC4EB]"
           />
         </CardContent>
 

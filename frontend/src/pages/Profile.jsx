@@ -97,7 +97,7 @@ const Profile = () => {
   return (
     <div className="bg-[#BBC4EB] min-h-screen pt-20">
       <Tabs defaultValue="profile" className="max-w-7xl mx-auto items-center py-10 ">
-        <TabsList className=" border-[#737CCF] border-b-2 mb-5">
+        <TabsList className=" flex w-full sm:w-auto border-[#737CCF] border-b-2 mb-5">
           <TabsTrigger className="data-[state=active]:bg-[#2218A7] data-[state=active]:text-white" value="profile">Profile</TabsTrigger>
           <TabsTrigger className="data-[state=active]:bg-[#2218A7] data-[state=active]:text-white" value="orders">Orders</TabsTrigger>
         </TabsList>
@@ -112,7 +112,7 @@ const Profile = () => {
                   <img
                     src={updateUser?.profilePic }
                     alt="profile picture"
-                    className="h-32 w-32 rounded-full object-cover border-1 border-[#737CCF]"
+                    className="h-24 w-24 sm:h-32 sm:w-32 rounded-full object-cover border-1 border-[#737CCF]"
                     value={updateUser?.profilePic}
                   />
                   <Label className="p-2 bg-[#737CCF] hover:bg-[#2218A7] text-white text-sm rounded-xl  text-center cursor-pointer">

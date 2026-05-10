@@ -7,12 +7,12 @@ import Reviews from "@/components/Reviews";
 
 const Home = () => {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-white">
+    <div className="w-full overflow-x-hidden bg-white">
       <div className="relative z-10 min-h-screen">
         <Hero />
-        <BentoGrid/>
+        <BentoGrid />
         <Features />
-        <Reviews/>
+        <Reviews />
         <Footer />
       </div>
     </div>

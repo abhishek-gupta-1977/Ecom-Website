@@ -85,7 +85,7 @@ const Products = () => {
   console.log(allProducts);
   return (
     <div className="pt-20 pb-10 bg-[#F7F8FF] min-h-screen">
-      <div className="max-w-7xl mx-auto flex gap-7 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 px-4 sm:px-6">
         {/* {Sidebar} */}
         <FilterSideBar
           allProducts={allProducts}
@@ -100,7 +100,7 @@ const Products = () => {
         <div className="flex flex-col flex-1">
           <div className="flex justify-end mb-4">
             <Select onValueChange={(value) => setSortOrder(value)}>
-              <SelectTrigger className="w-[200px] border-[#BBC4EB] text-[#2218A7]">
+              <SelectTrigger className="w-full sm:w-[220px] border-[#BBC4EB] text-[#2218A7]">
                 <SelectValue placeholder="Filter by Price" />
               </SelectTrigger>
               <SelectContent>
@@ -111,7 +111,7 @@ const Products = () => {
               </SelectContent>
             </Select>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
             {products.map((product) => (
               <ProductCard
                 key={product._id}

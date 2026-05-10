@@ -62,7 +62,7 @@ const ForgotPassword = () => {
           </p>
         </CardHeader>
 
-        <CardContent className="px-8">
+        <CardContent className="px-5 sm:px-8">
           <Label className="text-[#2218A7]">Email</Label>
 
           <Input
@@ -74,7 +74,7 @@ const ForgotPassword = () => {
           />
         </CardContent>
 
-        <CardFooter className="px-8 pb-8">
+        <CardFooter className="px-5 sm:px-8 pb-6 sm:pb-8">
           <Button
             onClick={submitHandler}
             className="w-full h-12 rounded-xl bg-[#2218A7] hover:bg-[#737CCF]"

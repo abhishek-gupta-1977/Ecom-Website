@@ -12,7 +12,7 @@ const SingleProduct = () => {
 
   return (
     <div className="py-24  bg-[#E1E5F8]">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrums product={product} />
 
         <div className="mt-10 bg-white rounded-3xl shadow-2xl p-5 grid lg:grid-cols-2 gap-16">

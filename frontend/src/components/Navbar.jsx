@@ -11,7 +11,7 @@ const Navbar = () => {
   const { user } = useSelector((store) => store.user);
   const items = useSelector((store) => store.cart.items);
   const accessToken = localStorage.getItem("accessToken");
-  const admin = user?.role === 'admin'? true : false
+  const admin = user?.role === "admin" ? true : false;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const logoutHandler = async () => {
@@ -26,26 +26,26 @@ const Navbar = () => {
         },
       );
       if (res.data.success) {
-            dispatch(setUser(null));
-            dispatch(setCart({items:[]}))
-            localStorage.removeItem('accessToken')
+        dispatch(setUser(null));
+        dispatch(setCart({ items: [] }));
+        localStorage.removeItem("accessToken");
         toast.success(res.data.message);
-        navigate('/')
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
-      toast.error("Logout failed!")
+      toast.error("Logout failed!");
     }
   };
 
   return (
-    <header className="bg-[#1E3A8A]/90 backdrop-blur-md fixed w-full z-20 border-b b text-white order-[#BBC4EB] shadow-sm">
-      <div className="max-w-7xl mx-auto flex justify-between items-center py-3">
+    <header className="bg-[#1E3A8A]/90 backdrop-blur-md fixed w-full z-20 border-b  text-white order-[#BBC4EB] shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
         <div>
           <h1 className="font-bold text-white text-2xl">E Commerce</h1>
         </div>
-        <nav className="flex  items-center justify-between gap-10">
-          <ul className="flex items-center justify-between gap-10 ">
+        <nav className="flex  items-center justify-between gap-4 sm:gap-6 lg:gap-10">
+          <ul className="hidden md:flex items-center gap-8">
             <Link className=" hover:text-[#64748B] transition" to={"/"}>
               <li>Home</li>
             </Link>
@@ -53,10 +53,20 @@ const Navbar = () => {
               <li>Products</li>
             </Link>
             {user && (
-              <Link className=" hover:text-[#64748B] transition" to={`/profile/${user?._id}`}>Hello, {user.firstName}</Link>
+              <Link
+                className=" hover:text-[#64748B] transition"
+                to={`/profile/${user?._id}`}
+              >
+                Hello, {user.firstName}
+              </Link>
             )}
             {admin && (
-              <Link className=" hover:text-[#64748B] transition" to={'/dashboard/sales'}>Dashboard</Link>
+              <Link
+                className=" hover:text-[#64748B] transition"
+                to={"/dashboard/sales"}
+              >
+                Dashboard
+              </Link>
             )}
           </ul>
           {user ? (
@@ -76,8 +86,8 @@ const Navbar = () => {
           )}
           <Link onClick={() => navigate("/cart")} className="relative ">
             <ShoppingCart />
-            <span className="bg-[#F97316] absolute text-white rounded-full px-2 -top-3 -right-5">
-              {items.length }
+            <span className="bg-[#F97316] absolute text-white rounded-full min-w-[20px] h-5 flex items-center justify-center text-xs px-1 -top-3 -right-5">
+              {items.length}
             </span>
           </Link>
         </nav>

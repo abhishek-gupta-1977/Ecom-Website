@@ -42,7 +42,7 @@ const VerifyMail = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F8F7FF] to-[#EEF2FF] px-4">
-      <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-10 max-w-md w-full text-center border border-white">
+      <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-6 sm:p-10 max-w-md w-full mx-4 sm:mx-0 text-center border border-white">
 
         <div className="mb-6 flex justify-center">
           {success === null ? (
@@ -54,7 +54,7 @@ const VerifyMail = () => {
           )}
         </div>
 
-        <h2 className="text-2xl font-bold text-[#1E1B4B] mb-4">
+        <h2 className="text-xl sm:text-2xl font-bold text-[#1E1B4B] mb-4">
           Email Verification
         </h2>
 

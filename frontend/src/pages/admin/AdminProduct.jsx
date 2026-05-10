@@ -202,12 +202,12 @@ const AdminProduct = () => {
       </div>
 
       {/* Search + Sort */}
-      <div className="flex justify-between mb-8">
+      <div className="flex flex-col md:flex-row gap-4 md:justify-between mb-8">
         <div className="relative">
           <Input
             type="text"
             placeholder="Search products..."
-            className="w-[420px] h-14 rounded-2xl border-[#BBC4EB] pl-5 bg-white"
+            className="w-full md:w-[420px] h-14 rounded-2xl border-[#BBC4EB] pl-5 bg-white"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -218,7 +218,7 @@ const AdminProduct = () => {
           value={sortOrder}
           onValueChange={(value) => setSortOrder(value)}
         >
-          <SelectTrigger className="w-[220px] h-14 rounded-2xl border-[#BBC4EB] bg-white">
+          <SelectTrigger className="w-full md:w-[220px] h-14 rounded-2xl border-[#BBC4EB] bg-white">
             <SelectValue placeholder="Sort by Price" />
           </SelectTrigger>
 

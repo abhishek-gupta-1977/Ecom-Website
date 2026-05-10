@@ -46,12 +46,12 @@ const AdminSales = () => {
   ];
 
   return (
-    <div className="pl-[330px] p-16 min-h-screen bg-[#E1E5F8]">
+    <div className="lg:pl-[350px] px-4 md:px-8 py-10 min-h-screen bg-[#E1E5F8]">
       <h1 className="text-4xl font-bold text-[#2218A7] mb-8">
         Sales Dashboard
       </h1>
 
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {stats.map((item, index) => (
           <Card
             key={index}

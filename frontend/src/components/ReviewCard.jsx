@@ -5,7 +5,7 @@ const ReviewCard = ({img,name,username,body}) => {
   return (
      <figure
       className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 bg-[#F8FAFC]",
+        "relative h-full w-56 sm:w-64 cursor-pointer overflow-hidden rounded-xl border p-4 bg-[#F8FAFC]",
        
       )}
     >

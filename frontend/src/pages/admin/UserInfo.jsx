@@ -102,7 +102,7 @@ const dispatch = useDispatch()
     <div className="pt-5 min-h-screen bg-gray-100">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col justify-center items-center min-h-screen">
-          <div className="flex justify-between gap-10 w-1/4">
+          <div className="flex justify-between gap-10 w-full max-w-4xl">
             <Button onClick={() => navigate(-1)}>
               <ArrowLeft />
             </Button>

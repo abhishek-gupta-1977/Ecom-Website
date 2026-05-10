@@ -32,7 +32,7 @@ const AdminOrders = () => {
   }, []);
 
 return (
-  <div className="pl-[350px] pr-20 py-16 min-h-screen bg-slate-50">
+  <div className="lg:pl-[350px] px-4 md:px-8 py-10 pr-20  min-h-screen bg-slate-50">
     <div className="mb-8">
       <h1 className="text-4xl font-bold text-[#0F172A]">
   Orders Dashboard
@@ -53,12 +53,12 @@ return (
         <table className="w-full">
           <thead className="bg-slate-100">
             <tr>
-              <th className="p-4">Order ID</th>
-              <th>User</th>
-              <th>Products</th>
-              <th>Amount</th>
-              <th>Status</th>
-              <th>Date</th>
+              <th className="p-3 text-sm">Order ID</th>
+              <th className="p-3 text-sm">User</th>
+              <th className="p-3 text-sm">Products</th>
+              <th className="p-3 text-sm">Amount</th>
+              <th className="p-3 text-sm">Status</th>
+              <th className="p-3 text-sm">Date</th>
             </tr>
           </thead>
 
@@ -68,13 +68,12 @@ return (
                 key={order._id}
                 className="border-b hover:bg-slate-50 transition text-center"
               >
-                <td className="p-4 text-slate-700">{order._id}</td>
-                <td>{order.user.firstName}</td>
-                <td>{order.products.length} Items</td>
-                <td className="font-semibold">
+                <td className="p-3 text-sm">{order.user.firstName}</td>
+                <td className="p-3 text-sm">{order.products.length} Items</td>
+                <td className="font-semibold p-3 text-sm">
                   ₹{order.amount.toLocaleString("en-IN")}
                 </td>
-                <td>
+                <td className="p-3 text-sm">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${
                       order.status === "Paid"
@@ -85,7 +84,7 @@ return (
                     {order.status}
                   </span>
                 </td>
-                <td>{new Date(order.createdAt).toLocaleDateString()}</td>
+                <td className="p-3 text-sm">{new Date(order.createdAt).toLocaleDateString()}</td>
               </tr>
             ))}
           </tbody>

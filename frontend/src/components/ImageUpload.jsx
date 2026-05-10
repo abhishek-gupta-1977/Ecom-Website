@@ -39,12 +39,12 @@ const ImageUpload = ({ formData, setFormData }) => {
         onChange={handleFiles}
       />
       <Button variant="outline ">
-        <label htmlFor="file-upload" className="cursor-pointer">
+        <label htmlFor="file-upload" className="cursor-pointer w-full sm:w-auto">
           Upload Images
         </label>
       </Button>
       {currentImages.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-3">
           {currentImages.map((file, index) => {
             let preview;
             if (file instanceof File) {
@@ -65,7 +65,7 @@ const ImageUpload = ({ formData, setFormData }) => {
                     alt=""
                     width={200}
                     height={200}
-                    className="w-full h-32 object-cover rounded-md"
+                    className="w-full h-24 sm:h-32h-32 object-cover rounded-md"
                   />
                   <button onClick={() => removeImage(index)} className="absolute top-1 right-1 bg-black/50 text-white rounded-full opacity-0 group-hover:opacity-100 transition">
                     <X size={14} />

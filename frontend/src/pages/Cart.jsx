@@ -20,9 +20,12 @@ const Cart = () => {
     const fetchCart = async () => {
       if (!accessToken) return;
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/cart`, {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/v1/cart`,
+          {
+            headers: { Authorization: `Bearer ${accessToken}` },
+          },
+        );
 
         if (res.data.success) {
           dispatch(setCart(res.data.cart));
@@ -87,27 +90,27 @@ const Cart = () => {
   return (
     <div className="pt-20 bg-[#F7F8FF] min-h-screen">
       {items.length > 0 ? (
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-[#2218A7] mb-8">
             Shopping Cart
           </h1>
 
-          <div className="flex gap-8">
+          <div className="flex flex-col xl:flex-row gap-8">
             {/* Cart Items */}
             <div className="flex-1 space-y-6 ">
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className=" flex items-center p-10   gap-6 bg-white rounded-2xl border border-[#BBC4EB] shadow-sm"
+                  className=" flex flex-col sm:flex-row items-center sm:items-start p-4 sm:p-6 gap-4 sm:gap-6 bg-white rounded-2xl border border-[#BBC4EB] shadow-sm"
                 >
                   <img
                     src={item?.productId?.productImage?.[0]?.url || userlogo}
                     alt={item?.productId?.productName}
-                    className="w-28 h-28 object-cover rounded-lg"
+                    className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-cover rounded-lg"
                   />
 
                   <div className="flex-1">
-                    <h2 className="text-xl font-semibold">
+                    <h2 className="text-lg sm:text-xl font-semibold text-center sm:text-left">
                       {item?.productId?.productName}
                     </h2>
                     <p className="text-gray-500 mt-1">
@@ -117,7 +120,7 @@ const Cart = () => {
                       ${(item.price * item.quantity).toFixed(2)}
                     </p>
                   </div>
-                  <div className=" flex gap-5 items-center">
+                  <div className="flex gap-3 items-center">
                     <Button
                       onClick={() =>
                         handleUpdateQuantity(item.productId._id, "decrease")
@@ -141,7 +144,7 @@ const Cart = () => {
                   <Button
                     variant="outline"
                     onClick={() => handleRemove(item?.productId?._id)}
-                    className="flex items-center gap-3 text-red-500  text-sm cursor-pointer"
+                    className="flex items-center gap-3 text-red-500 w-full sm:w-auto  text-sm cursor-pointer"
                   >
                     <Trash2 className="w-5 h-5" />
                     Remove
@@ -151,9 +154,11 @@ const Cart = () => {
             </div>
 
             {/* Order Summary */}
-            <div className="w-96 ">
-              <Card className="p-6 bg-white sticky top-28 border border-[#BBC4EB] rounded-2xl shadow-md">
-                <h2 className="text-2xl font-bold mb-6">Order Summary</h2>
+            <div className="w-full xl:w-96 ">
+              <Card className="p-6 bg-white xl:sticky xl:top-28 top-28 border border-[#BBC4EB] rounded-2xl shadow-md">
+                <h2 className="text-xl sm:text-2xl font-bold mb-6">
+                  Order Summary
+                </h2>
                 <div className="flex justify-between text-xl">
                   <span className="text-gray-600">Sub Total Amount</span>
                   <span className="font-bold">${totalPrice}</span>
@@ -183,10 +188,7 @@ const Cart = () => {
                 >
                   Proceed to Checkout
                 </button>
-                <Button
-                 
-                  className="bg-[#737CCF] hover:bg-[#2218A7] text-white p-4"
-                >
+                <Button className="bg-[#737CCF] hover:bg-[#2218A7] text-white p-4">
                   <Link to="/products">Continue Shopping</Link>
                 </Button>
 

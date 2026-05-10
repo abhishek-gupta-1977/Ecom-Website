@@ -31,14 +31,14 @@ const ProductDesc = ({ product }) => {
     }
   };
   return (
-    <div className="flex flex-col gap-7">
-      <h1 className="text-4xl font-bold text-gray-800">
+    <div className="flex flex-col gap-5 sm:gap-7">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
         {product.productName}
       </h1>
       <p className="text-gray-700">
         {product.productCategory} | {product.productBrand}
       </p>
-      <h2 className="text-white bg-blue-500 p-2 rounded-2xl w-26 text-2xl font-semibold">
+      <h2 className="text-white bg-blue-500 p-2 rounded-2xl w-fit px-4 text-lg sm:text-2xl font-semibold">
         ₹{product.productPrice}.00
       </h2>
       <p className="text-muted-foreground line-clamp-6">
@@ -49,7 +49,7 @@ const ProductDesc = ({ product }) => {
         <Input
           value={quantity}
           onChange={(e) => setQuantity(Number(e.target.value))}
-          className="w-14 mt-4"
+          className="w-16 sm:w-20 mt-4"
           type="number"
           min={1}
           max={20}
@@ -57,7 +57,7 @@ const ProductDesc = ({ product }) => {
       </div>
       <Button
         onClick={() => addToCart(product._id)}
-        className="w-max bg-amber-400 cursor-pointer"
+        className="w-full sm:w-max bg-amber-400 cursor-pointer"
       >
         Add to Cart
       </Button>

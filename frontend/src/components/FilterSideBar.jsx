@@ -22,7 +22,7 @@ const FilterSideBar = ({ allProducts, brand, setBrand, category, setCategory, se
     setCategory("All");
   }
   return (
-    <div className="bg-[#E1E5F8] p-5 mt-10 rounded-xl shadow-md h-max border border-[#BBC4EB]">
+    <div className="bg-[#E1E5F8] p-4 sm:p-5 mt-6 sm:mt-10 rounded-xl shadow-md h-max border border-[#BBC4EB] w-full lg:w-72">
       <Input
         placeholder="Search..."
         type="text"

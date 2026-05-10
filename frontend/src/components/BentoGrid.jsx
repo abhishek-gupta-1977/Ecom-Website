@@ -38,21 +38,21 @@ const BentoGrid = () => {
   }, []);
 
   console.log(allProducts);
-  return (
-    <div className="pt-20 pb-10 bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto flex gap-7 px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
-          {featuredProducts.map((product) => (
-            <ProductCard
-              key={product._id}
-              product={product}
-              loading={loading}
-            />
-          ))}
-        </div>
+ return (
+  <div className="pt-16 sm:pt-20 pb-10 bg-white min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-7">
+        {featuredProducts.map((product) => (
+          <ProductCard
+            key={product._id}
+            product={product}
+            loading={loading}
+          />
+        ))}
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default BentoGrid;
