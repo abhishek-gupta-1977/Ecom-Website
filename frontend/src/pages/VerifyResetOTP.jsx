@@ -30,10 +30,10 @@ const VerifyResetOTP = () => {
         `${import.meta.env.VITE_API_URL}/api/v1/user/verify-otp/${email}`,
         { otp }
       );
-
+console.log("EMAIL:", email);
       if (res.data.success) {
         toast.success(res.data.message);
-
+        
         navigate("/change-password", {
           state: { email },
         });
