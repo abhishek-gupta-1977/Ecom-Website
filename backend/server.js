@@ -10,14 +10,27 @@ import cors from "cors";
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173",
-      "https://ecommerce-project-tan-alpha.vercel.app",
-    /\.vercel\.app$/  
-    ],
+    origin: function (origin, callback) {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://ecommerce-project-tan-alpha.vercel.app",
+      ];
+
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        origin.endsWith(".vercel.app")
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+
     credentials: true,
   }),
 );
-
+app.options("*", cors());
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 

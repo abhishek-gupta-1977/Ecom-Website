@@ -13,7 +13,7 @@ export const sendOTP = async (otp, email) => {
       html: `<h1>Your OTP: ${otp}</h1>`,
     })
 
-   ;
+   
 
     console.log("OTP Email Sent Successfully");
     console.log(info);
