@@ -72,7 +72,7 @@ This is a fully functional, production-grade e-commerce platform that handles th
 
 ```
 screenshots/
-├── [home.png](./screenshots/home.png)
+├── [home.png]
 ├── products-page.png
 ├── cart.png
 ├── add-address.png
@@ -97,6 +97,121 @@ screenshots/
 └── admin-add-product.png
 
 ```
+# 📸 Screenshots
+
+## 🏠 Home Page
+<img src="./screenshots/home.png" width="100%" />
+
+---
+
+## 🛍️ Products Page
+<img src="./screenshots/products-page.png" width="100%" />
+
+---
+
+## 🛒 Cart
+<img src="./screenshots/cart.png" width="100%" />
+
+---
+
+## 📍 Add Address
+<img src="./screenshots/add-address.png" width="100%" />
+
+---
+
+## ✅ Added Address
+<img src="./screenshots/added-address.png" width="100%" />
+
+---
+
+## 📦 Order Confirmation
+<img src="./screenshots/order-confirmation.png" width="100%" />
+
+---
+
+## 💳 Razorpay Payment Page
+<img src="./screenshots/razorpay-payment-page.png" width="100%" />
+
+---
+
+# 🔐 Authentication
+
+## 🔑 Login
+<img src="./screenshots/login.png" width="100%" />
+
+---
+
+## 📝 Signup
+<img src="./screenshots/signup.png" width="100%" />
+
+---
+
+## ✉️ Signup Verify Mail
+<img src="./screenshots/signup-verifyMail.png" width="100%" />
+
+---
+
+## 📧 Verify Mail
+<img src="./screenshots/verify-mail.png" width="100%" />
+
+---
+
+## 🔢 OTP Screen
+<img src="./screenshots/otp.png" width="100%" />
+
+---
+
+## ✅ Verify OTP
+<img src="./screenshots/verify-otp.png" width="100%" />
+
+---
+
+## 🔒 Forgot Password
+<img src="./screenshots/forgot-password.png" width="100%" />
+
+---
+
+## 🔄 Change Password
+<img src="./screenshots/change-password.png" width="100%" />
+
+---
+
+# 👤 User Features
+
+## ✏️ Edit Profile
+<img src="./screenshots/edit-profile.png" width="100%" />
+
+---
+
+## 📦 User Orders
+<img src="./screenshots/user-orders.png" width="100%" />
+
+---
+
+# 🛠️ Admin Dashboard
+
+## 📊 Admin Dashboard
+<img src="./screenshots/admin-dashboard.png" width="100%" />
+
+---
+
+## ➕ Add Product
+<img src="./screenshots/admin-add-product.png" width="100%" />
+
+---
+
+## 📋 Product List
+<img src="./screenshots/admin-product-list.png" width="100%" />
+
+---
+
+## 👥 Admin Users
+<img src="./screenshots/admin-users.png" width="100%" />
+
+---
+
+## 🧾 All Orders
+<img src="./screenshots/admin-all-orders.png" width="100%" />
 ---
 
 ## 🛠 Tech Stack
