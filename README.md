@@ -75,11 +75,29 @@ This is a fully functional, production-grade e-commerce platform that handles th
 ```
 screenshots/
 ├── home.png
-├── products.png
+├── products-page.png
 ├── cart.png
-├── checkout.png
+├── add-address.png
+├── added-address.png
+├── admin-all-orders.png
 ├── admin-dashboard.png
-└── admin-products.png
+├── admin-product-list.png
+├── admin-users.png
+├── change-password.png
+├── edit-profile.png
+├── forgot-password.png
+├── login.png
+├── order-confirmation.png
+├── otp.png
+├── products-page.png
+├── razorpay-payment-page.png
+├── signup.png
+├── signup-verifyMail.png
+├── user-orders.png
+├── verify-mail.png
+├── verify-otp.png
+└── admin-add-product.png
+
 ```
 
 > 💡 **Pro tip:** Record a 60-second Loom walkthrough and paste the link above. It's the single biggest factor in getting recruiter attention.
@@ -341,9 +359,8 @@ I built StyleCart to go beyond tutorial-level work and tackle real production ch
 
 Interested in collaborating or hiring? I'd love to hear from you!
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](#)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-FF5722)](#)
-[![Email](https://img.shields.io/badge/Email-Reach%20Out-EA4335?logo=gmail&logoColor=white)](mailto:your@email.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abhishek-gupta-1aa879307/)
+[![Email](https://img.shields.io/badge/Email-Reach%20Out-EA4335?logo=gmail&logoColor=white)](mailto:108aggupta@gmail.com)
 
 > 💼 **Currently seeking Full Stack Developer roles — Remote & On-site**
 
