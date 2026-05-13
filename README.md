@@ -70,8 +70,6 @@ This is a fully functional, production-grade e-commerce platform that handles th
 
 ## 🎥 Demo
 
-> 📸 Add screenshots of your app here — home page, products, cart, checkout, and admin dashboard.
-
 ```
 screenshots/
 ├── home.png
@@ -99,9 +97,6 @@ screenshots/
 └── admin-add-product.png
 
 ```
-
-> 💡 **Pro tip:** Record a 60-second Loom walkthrough and paste the link above. It's the single biggest factor in getting recruiter attention.
-
 ---
 
 ## 🛠 Tech Stack
