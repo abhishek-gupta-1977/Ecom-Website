@@ -31,68 +31,67 @@ const AdminOrders = () => {
     fetchAllOrders();
   }, []);
 
-return (
-  <div className="lg:pl-[350px] px-4 md:px-8 py-10 pr-20  min-h-screen bg-slate-50">
-    <div className="mb-8">
-      <h1 className="text-4xl font-bold text-[#0F172A]">
-  Orders Dashboard
-</h1>
-      <p className="text-slate-500 mt-2">
-        Monitor and manage all customer orders
-      </p>
-    </div>
-
-    <Card className="rounded-3xl border border-[#E2E8F0] shadow-xl">
-      <div className="bg-gradient-to-r from-blue-600 to-sky-500 px-8 py-5">
-        <h2 className="text-white text-xl font-semibold">
-          All Orders
-        </h2>
+  return (
+    <div className="lg:pl-[350px] px-4 md:px-8 py-10 pr-20  min-h-screen bg-slate-50">
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-[#0F172A]">Orders Dashboard</h1>
+        <p className="text-slate-500 mt-2">
+          Monitor and manage all customer orders
+        </p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full">
-          <thead className="bg-slate-100">
-            <tr>
-              <th className="p-3 text-sm">Order ID</th>
-              <th className="p-3 text-sm">User</th>
-              <th className="p-3 text-sm">Products</th>
-              <th className="p-3 text-sm">Amount</th>
-              <th className="p-3 text-sm">Status</th>
-              <th className="p-3 text-sm">Date</th>
-            </tr>
-          </thead>
+      <Card className="rounded-3xl border border-[#E2E8F0] shadow-xl">
+        <div className="bg-gradient-to-r from-blue-600 to-sky-500 px-8 py-5">
+          <h2 className="text-white text-xl font-semibold">All Orders</h2>
+        </div>
 
-          <tbody>
-            {orders.map((order) => (
-              <tr
-                key={order._id}
-                className="border-b hover:bg-slate-50 transition text-center"
-              >
-                <td className="p-3 text-sm">{order.user.name}</td>
-                <td className="p-3 text-sm">{order.products.length} Items</td>
-                <td className="font-semibold p-3 text-sm">
-                  ₹{order.amount.toLocaleString("en-IN")}
-                </td>
-                <td className="p-3 text-sm">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      order.status === "Paid"
-                        ? "bg-emerald-100 text-emerald-600"
-                        : "bg-red-100 text-red-600"
-                    }`}
-                  >
-                    {order.status}
-                  </span>
-                </td>
-                <td className="p-3 text-sm">{new Date(order.createdAt).toLocaleDateString()}</td>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-slate-100">
+              <tr>
+                <th className="p-3 text-sm">Order ID</th>
+                <th className="p-3 text-sm">User</th>
+                <th className="p-3 text-sm">Products</th>
+                <th className="p-3 text-sm">Amount</th>
+                <th className="p-3 text-sm">Status</th>
+                <th className="p-3 text-sm">Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </Card>
-  </div>
-);
+            </thead>
+
+            <tbody>
+              {orders.map((order) => (
+                <tr
+                  key={order._id}
+                  className="border-b hover:bg-slate-50 transition text-center"
+                >
+                  <td className="p-3 text-sm">{order._id}...</td>
+                  <td className="p-3 text-sm">{order.user?.firstName}</td>
+                  <td className="p-3 text-sm">{order.products.length} Items</td>
+                  <td className="font-semibold p-3 text-sm">
+                    ₹{order.amount.toLocaleString("en-IN")}
+                  </td>
+                  <td className="p-3 text-sm">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        order.status === "Paid"
+                          ? "bg-emerald-100 text-emerald-600"
+                          : "bg-red-100 text-red-600"
+                      }`}
+                    >
+                      {order.status}
+                    </span>
+                  </td>
+                  <td className="p-3 text-sm">
+                    {new Date(order.createdAt).toLocaleDateString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Card>
+    </div>
+  );
 };
 
 export default AdminOrders;
