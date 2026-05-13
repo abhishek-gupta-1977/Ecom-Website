@@ -79,7 +79,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="lg:pl-[330px] px-4 md:px-8 py-10 p-16  bg-[#E1E5F8]">
+    <div className="lg:pl-[330px] pt-20 px-15 md:px-8 py-10 p-16  bg-[#E1E5F8]">
       <Card className="max-w-4xl mx-auto rounded-3xl border-0 shadow-2xl overflow-hidden">
         <div className="bg-[#2218A7] p-8 text-white">
           <h1 className="text-3xl font-bold">Add Product</h1>

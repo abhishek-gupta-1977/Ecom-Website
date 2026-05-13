@@ -47,7 +47,7 @@ const AdminUsers = () => {
   });
 
   return (
-    <div className="lg:pl-[350px] px-4 md:px-8 py-10 bg-[#E1E5F8] min-h-screen">
+    <div className="lg:pl-[350px] pt-20 px-4 md:px-8 py-10 bg-[#E1E5F8] min-h-screen">
       
       {/* Header */}
       <div className="mb-8">

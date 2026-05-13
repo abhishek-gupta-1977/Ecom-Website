@@ -32,7 +32,7 @@ const AdminOrders = () => {
   }, []);
 
   return (
-    <div className="lg:pl-[350px] px-4 md:px-8 py-10 pr-20  min-h-screen bg-slate-50">
+    <div className="lg:pl-[350px] pt-20 px-6 md:px-8 py-10 pr-20  min-h-screen bg-slate-50">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-[#0F172A]">Orders Dashboard</h1>
         <p className="text-slate-500 mt-2">
