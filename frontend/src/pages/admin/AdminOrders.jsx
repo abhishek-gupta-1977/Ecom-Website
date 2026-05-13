@@ -68,7 +68,7 @@ return (
                 key={order._id}
                 className="border-b hover:bg-slate-50 transition text-center"
               >
-                <td className="p-3 text-sm">{order.user.firstName}</td>
+                <td className="p-3 text-sm">{order.user.name}</td>
                 <td className="p-3 text-sm">{order.products.length} Items</td>
                 <td className="font-semibold p-3 text-sm">
                   ₹{order.amount.toLocaleString("en-IN")}
