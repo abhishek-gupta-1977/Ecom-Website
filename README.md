@@ -72,7 +72,7 @@ This is a fully functional, production-grade e-commerce platform that handles th
 
 ```
 screenshots/
-├── home.png
+├── [home.png](./screenshots/home.png)
 ├── products-page.png
 ├── cart.png
 ├── add-address.png
